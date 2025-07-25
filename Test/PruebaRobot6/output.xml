@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.13 on linux)" generated="2025-07-22T15:59:16.737055" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Bubble Sort" source="/home/death/Documents/pythonIBM/proyectos/Test/PruebaRobot6/test_bubble_sort.robot">
+<test id="s1-t1" name="Verificar Ordenamiento Bubble Sort" line="7">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:59:16.782052" level="INFO">${initial_array} = ['3', '4', '7', '8', '1', '9', '5', '2', '6']</msg>
+<var>${initial_array}</var>
+<arg>3</arg>
+<arg>4</arg>
+<arg>7</arg>
+<arg>8</arg>
+<arg>1</arg>
+<arg>9</arg>
+<arg>5</arg>
+<arg>2</arg>
+<arg>6</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:59:16.781700" elapsed="0.000405"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:59:16.782972" level="INFO">${expected_array} = ['1', '2', '3', '4', '5', '6', '7', '8', '9']</msg>
+<var>${expected_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<arg>6</arg>
+<arg>7</arg>
+<arg>8</arg>
+<arg>9</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:59:16.782685" elapsed="0.000325"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array inicial para la prueba: ${initial_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T15:59:16.783234" elapsed="0.000317"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T15:59:16.783964" level="FAIL">Keyword 'Algoritmos_de_clasificacion_Bubble_sort_burbujas.Bubble Sort' expected 2 arguments, got 1.</msg>
+<arg>${initial_array}</arg>
+<status status="FAIL" start="2025-07-22T15:59:16.783735" elapsed="0.000283">Keyword 'Algoritmos_de_clasificacion_Bubble_sort_burbujas.Bubble Sort' expected 2 arguments, got 1.</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array después del ordenamiento: ${initial_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:59:16.784218" elapsed="0.000031"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array esperado: ${expected_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:59:16.784395" elapsed="0.000027"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${initial_array}</arg>
+<arg>${expected_array}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="NOT RUN" start="2025-07-22T15:59:16.784574" elapsed="0.000027"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>¡La prueba de ordenamiento de burbuja ha pasado exitosamente!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:59:16.784759" elapsed="0.000035"/>
+</kw>
+<status status="FAIL" start="2025-07-22T15:59:16.780208" elapsed="0.004816">Keyword 'Algoritmos_de_clasificacion_Bubble_sort_burbujas.Bubble Sort' expected 2 arguments, got 1.</status>
+</test>
+<test id="s1-t2" name="Verificar Ordenamiento con Array Vacio" line="21">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:59:16.785837" level="INFO">${empty_array} = []</msg>
+<var>${empty_array}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:59:16.785636" elapsed="0.000242"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T15:59:16.786217" level="FAIL">Keyword 'Algoritmos_de_clasificacion_Bubble_sort_burbujas.Bubble Sort' expected 2 arguments, got 1.</msg>
+<arg>${empty_array}</arg>
+<status status="FAIL" start="2025-07-22T15:59:16.786022" elapsed="0.000238">Keyword 'Algoritmos_de_clasificacion_Bubble_sort_burbujas.Bubble Sort' expected 2 arguments, got 1.</status>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${empty_array}</arg>
+<arg>${empty_array}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="NOT RUN" start="2025-07-22T15:59:16.786432" elapsed="0.000026"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>La prueba con array vacío ha pasado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:59:16.786593" elapsed="0.000023"/>
+</kw>
+<status status="FAIL" start="2025-07-22T15:59:16.785277" elapsed="0.001526">Keyword 'Algoritmos_de_clasificacion_Bubble_sort_burbujas.Bubble Sort' expected 2 arguments, got 1.</status>
+</test>
+<test id="s1-t3" name="Verificar Ordenamiento con Array Ya Ordenado" line="27">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:59:16.787642" level="INFO">${sorted_array} = ['1', '2', '3', '4', '5']</msg>
+<var>${sorted_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:59:16.787424" elapsed="0.000252"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:59:16.788037" level="INFO">${expected_sorted_array} = ['1', '2', '3', '4', '5']</msg>
+<var>${expected_sorted_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:59:16.787839" elapsed="0.000229"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T15:59:16.788385" level="FAIL">Keyword 'Algoritmos_de_clasificacion_Bubble_sort_burbujas.Bubble Sort' expected 2 arguments, got 1.</msg>
+<arg>${sorted_array}</arg>
+<status status="FAIL" start="2025-07-22T15:59:16.788218" elapsed="0.000213">Keyword 'Algoritmos_de_clasificacion_Bubble_sort_burbujas.Bubble Sort' expected 2 arguments, got 1.</status>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${sorted_array}</arg>
+<arg>${expected_sorted_array}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="NOT RUN" start="2025-07-22T15:59:16.788593" elapsed="0.000027"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>La prueba con array ya ordenado ha pasado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:59:16.788759" elapsed="0.000023"/>
+</kw>
+<status status="FAIL" start="2025-07-22T15:59:16.787036" elapsed="0.001940">Keyword 'Algoritmos_de_clasificacion_Bubble_sort_burbujas.Bubble Sort' expected 2 arguments, got 1.</status>
+</test>
+<status status="FAIL" start="2025-07-22T15:59:16.738175" elapsed="0.051237"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Bubble Sort" id="s1" pass="0" fail="3" skip="0">Test Bubble Sort</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

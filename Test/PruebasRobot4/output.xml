@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.13 on linux)" generated="2025-07-22T15:27:14.427921" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Bubble Sort" source="/home/death/Documents/pythonIBM/proyectos/Test/PruebasRobot4/test_bubble_sort.robot">
+<test id="s1-t1" name="Verificar Ordenamiento Bubble Sort" line="6">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:27:14.470605" level="INFO">${initial_array} = ['3', '4', '7', '8', '1', '9', '5', '2', '6']</msg>
+<var>${initial_array}</var>
+<arg>3</arg>
+<arg>4</arg>
+<arg>7</arg>
+<arg>8</arg>
+<arg>1</arg>
+<arg>9</arg>
+<arg>5</arg>
+<arg>2</arg>
+<arg>6</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.470295" elapsed="0.000361"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:27:14.471126" level="INFO">${expected_array} = ['1', '2', '3', '4', '5', '6', '7', '8', '9']</msg>
+<var>${expected_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<arg>6</arg>
+<arg>7</arg>
+<arg>8</arg>
+<arg>9</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.470897" elapsed="0.000266"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array inicial para la prueba: ${initial_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.471369" elapsed="0.000292"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-07-22T15:27:14.472030" level="INFO">Length is 9.</msg>
+<msg time="2025-07-22T15:27:14.472139" level="INFO">${array_length} = 9</msg>
+<var>${array_length}</var>
+<arg>${initial_array}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.471843" elapsed="0.000325"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T15:27:14.472746" level="INFO">--- Comienza la clasificacion  Bubble Sort ---
+--- Va de izquierda a derecha ordenando el elemento con el elemento posterior a la derecha---
+ Array Inicial : ['3', '4', '7', '8', '1', '9', '5', '2', '6']
+ Comparando 3 y 4 (Array: ['3', '4', '7', '8', '1', '9', '5', '2', '6'])
+ Comparando 4 y 7 (Array: ['3', '4', '7', '8', '1', '9', '5', '2', '6'])
+ Comparando 7 y 8 (Array: ['3', '4', '7', '8', '1', '9', '5', '2', '6'])
+ Comparando 8 y 1 (Array: ['3', '4', '7', '8', '1', '9', '5', '2', '6'])
+ Intercambiando ele anterior 8 y posterior 1
+ Comparando 8 y 9 (Array: ['3', '4', '7', '1', '8', '9', '5', '2', '6'])
+ Comparando 9 y 5 (Array: ['3', '4', '7', '1', '8', '9', '5', '2', '6'])
+ Intercambiando ele anterior 9 y posterior 5
+ Comparando 9 y 2 (Array: ['3', '4', '7', '1', '8', '5', '9', '2', '6'])
+ Intercambiando ele anterior 9 y posterior 2
+ Comparando 9 y 6 (Array: ['3', '4', '7', '1', '8', '5', '2', '9', '6'])
+ Intercambiando ele anterior 9 y posterior 6
+--- Finalizar el paso  1: El array es ahora ['3', '4', '7', '1', '8', '5', '2', '6', '9'] los ultimos elementos ya estan colocados ---
+ Comparando 3 y 4 (Array: ['3', '4', '7', '1', '8', '5', '2', '6', '9'])
+ Comparando 4 y 7 (Array: ['3', '4', '7', '1', '8', '5', '2', '6', '9'])
+ Comparando 7 y 1 (Array: ['3', '4', '7', '1', '8', '5', '2', '6', '9'])
+ Intercambiando ele anterior 7 y posterior 1
+ Comparando 7 y 8 (Array: ['3', '4', '1', '7', '8', '5', '2', '6', '9'])
+ Comparando 8 y 5 (Array: ['3', '4', '1', '7', '8', '5', '2', '6', '9'])
+ Intercambiando ele anterior 8 y posterior 5
+ Comparando 8 y 2 (Array: ['3', '4', '1', '7', '5', '8', '2', '6', '9'])
+ Intercambiando ele anterior 8 y posterior 2
+ Comparando 8 y 6 (Array: ['3', '4', '1', '7', '5', '2', '8', '6', '9'])
+ Intercambiando ele anterior 8 y posterior 6
+--- Finalizar el paso  2: El array es ahora ['3', '4', '1', '7', '5', '2', '6', '8', '9'] los ultimos elementos ya estan colocados ---
+ Comparando 3 y 4 (Array: ['3', '4', '1', '7', '5', '2', '6', '8', '9'])
+ Comparando 4 y 1 (Array: ['3', '4', '1', '7', '5', '2', '6', '8', '9'])
+ Intercambiando ele anterior 4 y posterior 1
+ Comparando 4 y 7 (Array: ['3', '1', '4', '7', '5', '2', '6', '8', '9'])
+ Comparando 7 y 5 (Array: ['3', '1', '4', '7', '5', '2', '6', '8', '9'])
+ Intercambiando ele anterior 7 y posterior 5
+ Comparando 7 y 2 (Array: ['3', '1', '4', '5', '7', '2', '6', '8', '9'])
+ Intercambiando ele anterior 7 y posterior 2
+ Comparando 7 y 6 (Array: ['3', '1', '4', '5', '2', '7', '6', '8', '9'])
+ Intercambiando ele anterior 7 y posterior 6
+--- Finalizar el paso  3: El array es ahora ['3', '1', '4', '5', '2', '6', '7', '8', '9'] los ultimos elementos ya estan colocados ---
+ Comparando 3 y 1 (Array: ['3', '1', '4', '5', '2', '6', '7', '8', '9'])
+ Intercambiando ele anterior 3 y posterior 1
+ Comparando 3 y 4 (Array: ['1', '3', '4', '5', '2', '6', '7', '8', '9'])
+ Comparando 4 y 5 (Array: ['1', '3', '4', '5', '2', '6', '7', '8', '9'])
+ Comparando 5 y 2 (Array: ['1', '3', '4', '5', '2', '6', '7', '8', '9'])
+ Intercambiando ele anterior 5 y posterior 2
+ Comparando 5 y 6 (Array: ['1', '3', '4', '2', '5', '6', '7', '8', '9'])
+--- Finalizar el paso  4: El array es ahora ['1', '3', '4', '2', '5', '6', '7', '8', '9'] los ultimos elementos ya estan colocados ---
+ Comparando 1 y 3 (Array: ['1', '3', '4', '2', '5', '6', '7', '8', '9'])
+ Comparando 3 y 4 (Array: ['1', '3', '4', '2', '5', '6', '7', '8', '9'])
+ Comparando 4 y 2 (Array: ['1', '3', '4', '2', '5', '6', '7', '8', '9'])
+ Intercambiando ele anterior 4 y posterior 2
+ Comparando 4 y 5 (Array: ['1', '3', '2', '4', '5', '6', '7', '8', '9'])
+--- Finalizar el paso  5: El array es ahora ['1', '3', '2', '4', '5', '6', '7', '8', '9'] los ultimos elementos ya estan colocados ---
+ Comparando 1 y 3 (Array: ['1', '3', '2', '4', '5', '6', '7', '8', '9'])
+ Comparando 3 y 2 (Array: ['1', '3', '2', '4', '5', '6', '7', '8', '9'])
+ Intercambiando ele anterior 3 y posterior 2
+ Comparando 3 y 4 (Array: ['1', '2', '3', '4', '5', '6', '7', '8', '9'])
+--- Finalizar el paso  6: El array es ahora ['1', '2', '3', '4', '5', '6', '7', '8', '9'] los ultimos elementos ya estan colocados ---
+ Comparando 1 y 2 (Array: ['1', '2', '3', '4', '5', '6', '7', '8', '9'])
+ Comparando 2 y 3 (Array: ['1', '2', '3', '4', '5', '6', '7', '8', '9'])
+--- Paso 7: No hay intercambio , el array esta ordenado. ---
+--- clasificacion Bubble Sort finalizado  ---</msg>
+<arg>${initial_array}</arg>
+<arg>${array_length}</arg>
+<status status="PASS" start="2025-07-22T15:27:14.472345" elapsed="0.000495"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array después del ordenamiento: ${initial_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.473027" elapsed="0.000292"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array esperado: ${expected_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.473508" elapsed="0.000245"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${initial_array}</arg>
+<arg>${expected_array}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.473949" elapsed="0.000278"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>¡La prueba de ordenamiento de burbuja ha pasado exitosamente!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.474389" elapsed="0.000345"/>
+</kw>
+<status status="PASS" start="2025-07-22T15:27:14.469225" elapsed="0.005720"/>
+</test>
+<test id="s1-t2" name="Verificar Ordenamiento con Array Vacio" line="26">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:27:14.475871" level="INFO">${empty_array} = []</msg>
+<var>${empty_array}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.475657" elapsed="0.000251"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-07-22T15:27:14.476226" level="INFO">Length is 24.</msg>
+<msg time="2025-07-22T15:27:14.476314" level="INFO">${empty_array_length} = 24</msg>
+<var>${empty_array_length}</var>
+<arg>${empty_array} # Obtener la longitud</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.476070" elapsed="0.000272"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T15:27:14.476780" level="INFO">--- Comienza la clasificacion  Bubble Sort ---
+--- Va de izquierda a derecha ordenando el elemento con el elemento posterior a la derecha---
+ Array Inicial : []</msg>
+<msg time="2025-07-22T15:27:14.476905" level="FAIL">TypeError: 'str' object cannot be interpreted as an integer</msg>
+<arg>${empty_array}</arg>
+<arg>${empty_array_length} # Pasar la longitud</arg>
+<status status="FAIL" start="2025-07-22T15:27:14.476552" elapsed="0.000881">TypeError: 'str' object cannot be interpreted as an integer</status>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${empty_array}</arg>
+<arg>${empty_array}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="NOT RUN" start="2025-07-22T15:27:14.477658" elapsed="0.000031"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>La prueba con array vacío ha pasado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:27:14.477835" elapsed="0.000025"/>
+</kw>
+<status status="FAIL" start="2025-07-22T15:27:14.475171" elapsed="0.002901">TypeError: 'str' object cannot be interpreted as an integer</status>
+</test>
+<test id="s1-t3" name="Verificar Ordenamiento con Array Ya Ordenado" line="33">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:27:14.478904" level="INFO">${sorted_array} = ['1', '2', '3', '4', '5']</msg>
+<var>${sorted_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.478687" elapsed="0.000251"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:27:14.479261" level="INFO">${expected_sorted_array} = ['1', '2', '3', '4', '5']</msg>
+<var>${expected_sorted_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.479097" elapsed="0.000194"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-07-22T15:27:14.479645" level="INFO">Length is 47.</msg>
+<msg time="2025-07-22T15:27:14.479746" level="INFO">${sorted_array_length} = 47</msg>
+<var>${sorted_array_length}</var>
+<arg>${sorted_array} # Obtener la longitud</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-07-22T15:27:14.479465" elapsed="0.000310"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T15:27:14.480128" level="INFO">--- Comienza la clasificacion  Bubble Sort ---
+--- Va de izquierda a derecha ordenando el elemento con el elemento posterior a la derecha---
+ Array Inicial : ['1', '2', '3', '4', '5']</msg>
+<msg time="2025-07-22T15:27:14.480242" level="FAIL">TypeError: 'str' object cannot be interpreted as an integer</msg>
+<arg>${sorted_array}</arg>
+<arg>${sorted_array_length} # Pasar la longitud</arg>
+<status status="FAIL" start="2025-07-22T15:27:14.479921" elapsed="0.000583">TypeError: 'str' object cannot be interpreted as an integer</status>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${sorted_array}</arg>
+<arg>${expected_sorted_array}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="NOT RUN" start="2025-07-22T15:27:14.480699" elapsed="0.000034"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>La prueba con array ya ordenado ha pasado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:27:14.480875" elapsed="0.000024"/>
+</kw>
+<status status="FAIL" start="2025-07-22T15:27:14.478310" elapsed="0.002798">TypeError: 'str' object cannot be interpreted as an integer</status>
+</test>
+<status status="FAIL" start="2025-07-22T15:27:14.428927" elapsed="0.052625"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Bubble Sort" id="s1" pass="1" fail="2" skip="0">Test Bubble Sort</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.13 on linux)" generated="2025-07-22T15:33:23.080093" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Bubble Sort" source="/home/death/Documents/pythonIBM/proyectos/Test/PruebasRobot5/test_bubble_sort.robot">
+<test id="s1-t1" name="Verificar Ordenamiento Bubble Sort" line="6">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:33:23.122526" level="INFO">${initial_array} = ['3', '4', '7', '8', '1', '9', '5', '2', '6']</msg>
+<var>${initial_array}</var>
+<arg>3</arg>
+<arg>4</arg>
+<arg>7</arg>
+<arg>8</arg>
+<arg>1</arg>
+<arg>9</arg>
+<arg>5</arg>
+<arg>2</arg>
+<arg>6</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:33:23.122209" elapsed="0.000374"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:33:23.123048" level="INFO">${expected_array} = ['1', '2', '3', '4', '5', '6', '7', '8', '9']</msg>
+<var>${expected_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<arg>6</arg>
+<arg>7</arg>
+<arg>8</arg>
+<arg>9</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:33:23.122828" elapsed="0.000256"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array inicial para la prueba: ${initial_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T15:33:23.123277" elapsed="0.000310"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-07-22T15:33:23.123967" level="INFO">Length is 9.</msg>
+<msg time="2025-07-22T15:33:23.124077" level="INFO">${array_length} = 9</msg>
+<var>${array_length}</var>
+<arg>${initial_array}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-07-22T15:33:23.123769" elapsed="0.000336"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T15:33:23.124877" level="FAIL">Resolving variable '${array_length:int}' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>${initial_array}</arg>
+<arg>${array_length:int} # &lt;-- ¡Añade :int!</arg>
+<status status="FAIL" start="2025-07-22T15:33:23.124285" elapsed="0.000647">Resolving variable '${array_length:int}' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array después del ordenamiento: ${initial_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:33:23.125151" elapsed="0.000034"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array esperado: ${expected_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:33:23.125340" elapsed="0.000027"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${initial_array}</arg>
+<arg>${expected_array}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="NOT RUN" start="2025-07-22T15:33:23.125538" elapsed="0.000036"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>¡La prueba de ordenamiento de burbuja ha pasado exitosamente!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:33:23.125717" elapsed="0.000024"/>
+</kw>
+<status status="FAIL" start="2025-07-22T15:33:23.121148" elapsed="0.004859">Resolving variable '${array_length:int}' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</test>
+<test id="s1-t2" name="Verificar Ordenamiento con Array Vacio" line="23">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:33:23.126893" level="INFO">${empty_array} = []</msg>
+<var>${empty_array}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:33:23.126643" elapsed="0.000286"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-07-22T15:33:23.127259" level="INFO">Length is 0.</msg>
+<msg time="2025-07-22T15:33:23.127354" level="INFO">${empty_array_length} = 0</msg>
+<var>${empty_array_length}</var>
+<arg>${empty_array}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-07-22T15:33:23.127091" elapsed="0.000306"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T15:33:23.128132" level="FAIL">Resolving variable '${empty_array_length:int}' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>${empty_array}</arg>
+<arg>${empty_array_length:int} # &lt;-- ¡Añade :int!</arg>
+<status status="FAIL" start="2025-07-22T15:33:23.127542" elapsed="0.000641">Resolving variable '${empty_array_length:int}' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${empty_array}</arg>
+<arg>${empty_array}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="NOT RUN" start="2025-07-22T15:33:23.128385" elapsed="0.000027"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>La prueba con array vacío ha pasado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:33:23.128546" elapsed="0.000022"/>
+</kw>
+<status status="FAIL" start="2025-07-22T15:33:23.126260" elapsed="0.002505">Resolving variable '${empty_array_length:int}' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</test>
+<test id="s1-t3" name="Verificar Ordenamiento con Array Ya Ordenado" line="31">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:33:23.129587" level="INFO">${sorted_array} = ['1', '2', '3', '4', '5']</msg>
+<var>${sorted_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:33:23.129376" elapsed="0.000245"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:33:23.129942" level="INFO">${expected_sorted_array} = ['1', '2', '3', '4', '5']</msg>
+<var>${expected_sorted_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:33:23.129773" elapsed="0.000197"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-07-22T15:33:23.130281" level="INFO">Length is 5.</msg>
+<msg time="2025-07-22T15:33:23.130374" level="INFO">${sorted_array_length} = 5</msg>
+<var>${sorted_array_length}</var>
+<arg>${sorted_array}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-07-22T15:33:23.130128" elapsed="0.000272"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T15:33:23.131087" level="FAIL">Resolving variable '${sorted_array_length:int}' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>${sorted_array}</arg>
+<arg>${sorted_array_length:int} # &lt;-- ¡Añade :int!</arg>
+<status status="FAIL" start="2025-07-22T15:33:23.130533" elapsed="0.000606">Resolving variable '${sorted_array_length:int}' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${sorted_array}</arg>
+<arg>${expected_sorted_array}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="NOT RUN" start="2025-07-22T15:33:23.131338" elapsed="0.000028"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>La prueba con array ya ordenado ha pasado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:33:23.131754" elapsed="0.000027"/>
+</kw>
+<status status="FAIL" start="2025-07-22T15:33:23.129003" elapsed="0.002999">Resolving variable '${sorted_array_length:int}' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</test>
+<status status="FAIL" start="2025-07-22T15:33:23.081120" elapsed="0.051384"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Bubble Sort" id="s1" pass="0" fail="3" skip="0">Test Bubble Sort</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

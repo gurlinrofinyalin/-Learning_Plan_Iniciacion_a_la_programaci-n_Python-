@@ -1,0 +1,5 @@
+El problema: Robot Framework pasa la longitud como una cadena
+Aunque usamos Get Length, parece que Robot Framework, al pasar ese valor a la función Python, lo está convirtiendo implícitamente a una cadena de texto (string). Esto es un comportamiento que puede ocurrir con algunas conversiones de tipo entre Robot Framework y Python.
+
+La Solución: Convertir explícitamente a entero en Robot Framework
+Para solucionar esto, podemos forzar a Robot Framework a pasar el valor de la longitud como un entero utilizando la sintaxis de conversión de tipo: ${array_length:int}.

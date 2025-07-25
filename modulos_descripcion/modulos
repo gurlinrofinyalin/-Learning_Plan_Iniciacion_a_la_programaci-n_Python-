@@ -1,0 +1,180 @@
+
+un modulo es un archivo py
+
+puede albergar un conjunto de:
+funciones
+variables
+clases
+
+
+un modulo puede ser utilizado en otros modulos
+
+
+reutilizacion de codigo
+
+
+un fichero  contiene
+definiciones
+y declaraciones
+de python
+
+
+
+un modulo puede contener tanto
+declaraciones ejecutables
+como definiciones de funciones
+
+que estan diseñadas para inicializar el modulo
+y se ejecutan unicamente la primera vez que el
+modulo se encuentra en una declaracion import
+
+
+aunque tambien se ejecutan cuando el archivo
+se ejecuta como script
+
+
+cada modulo tiene su propio espacio de nombres
+el cual es usado como espacio de nombres global
+para
+todas las funciones definidas en el modulo
+entonces el programador puede utilizar variables
+globales en el modulo sin preocuparse de conflictos
+con una variable que sea global del usuario
+
+
+puedes acceder a las variables globales de un modulo
+con la misma notacion usada para referirte a sus funcines
+por ejemplo nombre_modulo.item
+
+
+
+los nombres de los modulos importados son ubicados
+en el espacio de nombres global del modulo que
+hace la importacion
+
+%cd src
+[Aqui os aparecera el path a vuestro directrorio/src]
+%ls
+palabras.py numeros.py
+
+
+
+los modulos pueden importar otros modulos
+es constumbre pero no obligatorio , ubicar todas las
+declaraciones de import al principio del modulo
+o en el scope , segun el caso
+
+
+
+
+
+
+
+
+
+
+el nombre del archivo es el nombre del
+modulo con el sufijo .py
+
+el nombre del modulo  como cadena esta disponible en el
+valor de la variable global __name__
+
+
+
+creamos un archivo palabras.py
+
+#palabras.py
+hola ='hello'
+mundo = 'world'
+
+
+para componer un porograma de varios modulos
+lo haremos mediante el comando import
+que nos permite incorporar todo el contenido
+
+
+creamos el modulo
+#numeros.py
+num=3
+num2=7
+
+
+
+####en otro fichero
+
+# podemos renombrar modulos
+import palabras
+import numero as nums
+
+
+# accedemos a los elementos usando '.'
+print(palabras.hola, palabras.mundo)
+
+
+print(numeros.num)# 3
+print(numeros.num2)# 7
+
+
+
+
+
+es posible importar solo algunos objetos del modulo
+
+from palabras import hola as saludo
+from numeros import num,num2
+# importamos varios objetos a la vez
+print(saludo)
+print(num)
+
+
+
+para conocer los objetos de un modulo que
+acabamos de importar
+
+ejecutado en consola python
+funcion builtins dir
+nos devuelve toda una lista de funciones y objetos
+contenidos en el modulo
+
+import palabras
+dir(palabras)
+['__builtins__',
+'__cached__',
+'__doc__',
+'__file__',
+'__loader__',
+'__name__',
+'__package__',
+'__spec__',
+'hola',
+'mundo']
+
+
+
+las listas son un tipo basico de python
+
+Los Atributos que contienen su nombre
+rodeado de guiones bajos vienen incluidos
+de serie en todos los modulos
+
+
+
+Cada modulo define su espacio de nombres
+en el que se contienen todos los objetos del modulo
+
+
+Ningun modulo puede acceder a los objetos de otro modulo
+a menos que lo haya importado previamente
+especialmente util a evitar colisiones o coincidencias
+entre nombres
+
+
+
+
+
+
+
+
+
+
+

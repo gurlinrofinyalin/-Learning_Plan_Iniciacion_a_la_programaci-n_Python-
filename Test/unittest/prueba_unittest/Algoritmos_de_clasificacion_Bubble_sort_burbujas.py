@@ -1,0 +1,188 @@
+"""
+Bubble Sort: Basic Explanation
+Ordenamiento de Burbuja: Explicación Básica
+
+Bubble Sort is a simple sorting algorithm. It repeatedly steps
+through the list, compares adjacent elements, and swaps them
+if they are in the wrong order. The pass through the list is
+repeated until no swaps are needed, which indicates that the list is sorted.
+
+El Ordenamiento de Burbuja es un algoritmo de ordenamiento simple.
+Recorre repetidamente la lista, compara elementos adyacentes y
+los intercambia si están en el orden incorrecto.
+
+El recorrido por
+la lista se repite hasta que no se necesiten más intercambios,
+lo que indica que la lista está ordenada.
+"""
+
+
+def bubble_sort(arr, n):
+    print("--- Comienza la clasificacion  Bubble Sort ---")
+    print("--- Va de izquierda a derecha ordenando el elemento con el elemento posterior a la derecha---")
+    print(f" Array Inicial : {arr}")  # Mostrar el array inicial
+
+    # Iterate through all elements of the array
+    # Iterar a través de todos los elementos del array
+    for i in range(n):
+        # Flag to optimize: if no swaps in a pass, the array is sorted
+        # Bandera para optimizar: si no hay intercambios en un paso, el array está ordenado
+        intercambiado = False
+
+        # The last 'i' elements are already in place (sorted)
+        # So, we only need to iterate up to 'n - i - 1'
+        # Los últimos 'i' elementos ya están en su lugar (ordenados)
+        # Por lo tanto, solo necesitamos iterar hasta 'n - i - 1'
+
+        """ RAZON POR EL QUE EL n - i - 1 , el elemento mas grande ya esta colocado
+La razón principal es que, con cada pasada del bucle externo (i), 
+el elemento más grande de la parte no ordenada "sube" a su posición correcta 
+al final de esa sección. Esto significa que después de i pasadas, 
+los últimos i elementos del array ya están ordenados 
+y no necesitamos revisarlos de nuevo.
+
+
+n: Es el número total de elementos en el array. 
+Si n es 9, los índices van del 0 al 8.
+El bucle externo, for i in range(n):, representa el número de pasadas 
+(o iteraciones) que el algoritmo ha completado.
+Después de la 1ª pasada (i = 0): 
+El elemento más grande habrá "subido" hasta el final del array (índice n-1). 
+Este elemento ya está en su posición final y ordenada.
+Después de la 2ª pasada (i = 1): 
+El segundo elemento más grande se habrá movido a la penúltima posición (índice n-2). Este elemento también está ordenado.
+Después de la i-ésima pasada: 
+Los últimos i elementos del array tienen la garantía de estar en sus posiciones correctas y ordenadas.
+        """
+        for j in range(n - i - 1):
+            # Print the comparison
+            # Imprimir la comparación
+            print(f" Comparando {arr[j]} y {arr[j + 1]} (Array: {arr})")
+
+            # Check if the current element is greater than the next element
+            # Comprobar si el elemento actual es mayor que el siguiente elemento
+            if arr[j] > arr[j + 1]:
+                # Print the swap
+                # Imprimir el intercambio
+                print(f" Intercambiando ele anterior {arr[j]} y posterior {arr[j + 1]}")
+                # Swap the adjacent elements if they are in the wrong order
+                # Intercambiar los elementos adyacentes si están en el orden incorrecto
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                intercambiado= True  # Mark that a swap occurred marcar si hay un intercambio
+
+        # If no two elements were swapped by inner loop, then break
+        # Si ningún par de elementos fue intercambiado por el bucle interno, entonces salir
+        if not intercambiado:
+            print(f"--- Paso {i + 1}: No hay intercambio , el array esta ordenado. ---")
+            break
+        print(f"--- Finalizar el paso  {i + 1}: El array es ahora {arr} los ultimos elementos ya estan colocados ---")
+    print("--- clasificacion Bubble Sort finalizado  ---")
+
+
+
+    """
+    --- Comienza la clasificacion  Bubble Sort ---
+--- Va de izquierda a derecha ordenando el elemento con el elemento posterior a la derecha---
+ Array Inicial : [3, 4, 7, 8, 1, 9, 5, 2, 6]
+ Comparando 3 y 4 (Array: [3, 4, 7, 8, 1, 9, 5, 2, 6])
+ Comparando 4 y 7 (Array: [3, 4, 7, 8, 1, 9, 5, 2, 6])
+ Comparando 7 y 8 (Array: [3, 4, 7, 8, 1, 9, 5, 2, 6])
+ Comparando 8 y 1 (Array: [3, 4, 7, 8, 1, 9, 5, 2, 6])
+ Intercambiando ele anterior 8 y posterior 1
+ Comparando 8 y 9 (Array: [3, 4, 7, 1, 8, 9, 5, 2, 6])
+ Comparando 9 y 5 (Array: [3, 4, 7, 1, 8, 9, 5, 2, 6])
+ Intercambiando ele anterior 9 y posterior 5
+ Comparando 9 y 2 (Array: [3, 4, 7, 1, 8, 5, 9, 2, 6])
+ Intercambiando ele anterior 9 y posterior 2
+ Comparando 9 y 6 (Array: [3, 4, 7, 1, 8, 5, 2, 9, 6])
+ Intercambiando ele anterior 9 y posterior 6
+--- Finalizar el paso  1: El array es ahora [3, 4, 7, 1, 8, 5, 2, 6, 9] los ultimos elementos ya estan colocados ---
+ Comparando 3 y 4 (Array: [3, 4, 7, 1, 8, 5, 2, 6, 9])
+ Comparando 4 y 7 (Array: [3, 4, 7, 1, 8, 5, 2, 6, 9])
+ Comparando 7 y 1 (Array: [3, 4, 7, 1, 8, 5, 2, 6, 9])
+ Intercambiando ele anterior 7 y posterior 1
+ Comparando 7 y 8 (Array: [3, 4, 1, 7, 8, 5, 2, 6, 9])
+ Comparando 8 y 5 (Array: [3, 4, 1, 7, 8, 5, 2, 6, 9])
+ Intercambiando ele anterior 8 y posterior 5
+ Comparando 8 y 2 (Array: [3, 4, 1, 7, 5, 8, 2, 6, 9])
+ Intercambiando ele anterior 8 y posterior 2
+ Comparando 8 y 6 (Array: [3, 4, 1, 7, 5, 2, 8, 6, 9])
+ Intercambiando ele anterior 8 y posterior 6
+--- Finalizar el paso  2: El array es ahora [3, 4, 1, 7, 5, 2, 6, 8, 9] los ultimos elementos ya estan colocados ---
+ Comparando 3 y 4 (Array: [3, 4, 1, 7, 5, 2, 6, 8, 9])
+ Comparando 4 y 1 (Array: [3, 4, 1, 7, 5, 2, 6, 8, 9])
+ Intercambiando ele anterior 4 y posterior 1
+ Comparando 4 y 7 (Array: [3, 1, 4, 7, 5, 2, 6, 8, 9])
+ Comparando 7 y 5 (Array: [3, 1, 4, 7, 5, 2, 6, 8, 9])
+ Intercambiando ele anterior 7 y posterior 5
+ Comparando 7 y 2 (Array: [3, 1, 4, 5, 7, 2, 6, 8, 9])
+ Intercambiando ele anterior 7 y posterior 2
+ Comparando 7 y 6 (Array: [3, 1, 4, 5, 2, 7, 6, 8, 9])
+ Intercambiando ele anterior 7 y posterior 6
+--- Finalizar el paso  3: El array es ahora [3, 1, 4, 5, 2, 6, 7, 8, 9] los ultimos elementos ya estan colocados ---
+ Comparando 3 y 1 (Array: [3, 1, 4, 5, 2, 6, 7, 8, 9])
+ Intercambiando ele anterior 3 y posterior 1
+ Comparando 3 y 4 (Array: [1, 3, 4, 5, 2, 6, 7, 8, 9])
+ Comparando 4 y 5 (Array: [1, 3, 4, 5, 2, 6, 7, 8, 9])
+ Comparando 5 y 2 (Array: [1, 3, 4, 5, 2, 6, 7, 8, 9])
+ Intercambiando ele anterior 5 y posterior 2
+ Comparando 5 y 6 (Array: [1, 3, 4, 2, 5, 6, 7, 8, 9])
+--- Finalizar el paso  4: El array es ahora [1, 3, 4, 2, 5, 6, 7, 8, 9] los ultimos elementos ya estan colocados ---
+ Comparando 1 y 3 (Array: [1, 3, 4, 2, 5, 6, 7, 8, 9])
+ Comparando 3 y 4 (Array: [1, 3, 4, 2, 5, 6, 7, 8, 9])
+ Comparando 4 y 2 (Array: [1, 3, 4, 2, 5, 6, 7, 8, 9])
+ Intercambiando ele anterior 4 y posterior 2
+ Comparando 4 y 5 (Array: [1, 3, 2, 4, 5, 6, 7, 8, 9])
+--- Finalizar el paso  5: El array es ahora [1, 3, 2, 4, 5, 6, 7, 8, 9] los ultimos elementos ya estan colocados ---
+ Comparando 1 y 3 (Array: [1, 3, 2, 4, 5, 6, 7, 8, 9])
+ Comparando 3 y 2 (Array: [1, 3, 2, 4, 5, 6, 7, 8, 9])
+ Intercambiando ele anterior 3 y posterior 2
+ Comparando 3 y 4 (Array: [1, 2, 3, 4, 5, 6, 7, 8, 9])
+--- Finalizar el paso  6: El array es ahora [1, 2, 3, 4, 5, 6, 7, 8, 9] los ultimos elementos ya estan colocados ---
+ Comparando 1 y 2 (Array: [1, 2, 3, 4, 5, 6, 7, 8, 9])
+ Comparando 2 y 3 (Array: [1, 2, 3, 4, 5, 6, 7, 8, 9])
+--- Paso 7: No hay intercambio , el array esta ordenado. ---
+--- clasificacion Bubble Sort finalizado  ---
+
+Final Sorted Array: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    """
+
+
+
+if __name__ == '__main__':
+    # Array initialization
+    # Inicialización del array
+    arr = [3, 4, 7, 8, 1, 9, 5, 2, 6]
+
+    # Sort the array using bubble sort
+    # Use len(arr) for automatic array size, making the code more robust
+    # Ordenar el array usando el algoritmo de ordenamiento de burbuja
+    # Usar len(arr) para obtener automáticamente el tamaño del array, haciendo el código más robusto
+    bubble_sort(arr, len(arr))
+
+    # Print the final sorted array
+    # Imprimir el array ordenado final
+    print(f"\nFinal Sorted Array: {str(arr)}")
+
+"""
+Analysis of Bubble Sort:
+Análisis del Ordenamiento de Burbuja:
+
+The time complexity of Bubble Sort is O(n^2).
+This is because for an array of n elements, in the worst and average cases,
+it performs approximately n^2/2 comparisons and swaps.
+
+La complejidad temporal del Ordenamiento de Burbuja es O(n^2).
+Esto se debe a que para un array de n elementos, en el peor y promedio de los casos,
+realiza aproximadamente n^2/2 comparaciones e intercambios.
+
+The space complexity is O(1).
+This indicates that the amount of additional memory used remains constant,
+regardless of the input array's size, as it only requires a few temporary
+variables for swapping.
+
+La complejidad espacial es O(1).
+Esto indica que la cantidad de memoria adicional utilizada permanece constante,
+independientemente del tamaño del array de entrada, ya que solo requiere unas
+pocas variables temporales para el intercambio.
+"""

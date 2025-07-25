@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.13 on linux)" generated="2025-07-22T16:01:01.748804" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Bubble Sort" source="/home/death/Documents/pythonIBM/proyectos/Test/PruebaRobot6/test_bubble_sort.robot">
+<test id="s1-t1" name="Verificar Ordenamiento Bubble Sort" line="6">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T16:01:01.787974" level="INFO">${initial_array} = ['3', '4', '7', '8', '1', '9', '5', '2', '6']</msg>
+<var>${initial_array}</var>
+<arg>3</arg>
+<arg>4</arg>
+<arg>7</arg>
+<arg>8</arg>
+<arg>1</arg>
+<arg>9</arg>
+<arg>5</arg>
+<arg>2</arg>
+<arg>6</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.787655" elapsed="0.000370"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T16:01:01.788414" level="INFO">${expected_array} = ['1', '2', '3', '4', '5', '6', '7', '8', '9']</msg>
+<var>${expected_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<arg>6</arg>
+<arg>7</arg>
+<arg>8</arg>
+<arg>9</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.788210" elapsed="0.000241"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-07-22T16:01:01.788969" level="INFO">Length is 9.</msg>
+<msg time="2025-07-22T16:01:01.789080" level="INFO">${length} = 9</msg>
+<var>${length}</var>
+<arg>${initial_array}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.788750" elapsed="0.000361"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array inicial para la prueba: ${initial_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.789275" elapsed="0.000291"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T16:01:01.790144" level="INFO">--- Comienza la clasificacion  Bubble Sort ---
+--- Va de izquierda a derecha ordenando el elemento con el elemento posterior a la derecha---
+ Array Inicial : ['3', '4', '7', '8', '1', '9', '5', '2', '6']
+ Comparando 3 y 4 (Array: ['3', '4', '7', '8', '1', '9', '5', '2', '6'])
+ Comparando 4 y 7 (Array: ['3', '4', '7', '8', '1', '9', '5', '2', '6'])
+ Comparando 7 y 8 (Array: ['3', '4', '7', '8', '1', '9', '5', '2', '6'])
+ Comparando 8 y 1 (Array: ['3', '4', '7', '8', '1', '9', '5', '2', '6'])
+ Intercambiando ele anterior 8 y posterior 1
+ Comparando 8 y 9 (Array: ['3', '4', '7', '1', '8', '9', '5', '2', '6'])
+ Comparando 9 y 5 (Array: ['3', '4', '7', '1', '8', '9', '5', '2', '6'])
+ Intercambiando ele anterior 9 y posterior 5
+ Comparando 9 y 2 (Array: ['3', '4', '7', '1', '8', '5', '9', '2', '6'])
+ Intercambiando ele anterior 9 y posterior 2
+ Comparando 9 y 6 (Array: ['3', '4', '7', '1', '8', '5', '2', '9', '6'])
+ Intercambiando ele anterior 9 y posterior 6
+--- Finalizar el paso  1: El array es ahora ['3', '4', '7', '1', '8', '5', '2', '6', '9'] los ultimos elementos ya estan colocados ---
+ Comparando 3 y 4 (Array: ['3', '4', '7', '1', '8', '5', '2', '6', '9'])
+ Comparando 4 y 7 (Array: ['3', '4', '7', '1', '8', '5', '2', '6', '9'])
+ Comparando 7 y 1 (Array: ['3', '4', '7', '1', '8', '5', '2', '6', '9'])
+ Intercambiando ele anterior 7 y posterior 1
+ Comparando 7 y 8 (Array: ['3', '4', '1', '7', '8', '5', '2', '6', '9'])
+ Comparando 8 y 5 (Array: ['3', '4', '1', '7', '8', '5', '2', '6', '9'])
+ Intercambiando ele anterior 8 y posterior 5
+ Comparando 8 y 2 (Array: ['3', '4', '1', '7', '5', '8', '2', '6', '9'])
+ Intercambiando ele anterior 8 y posterior 2
+ Comparando 8 y 6 (Array: ['3', '4', '1', '7', '5', '2', '8', '6', '9'])
+ Intercambiando ele anterior 8 y posterior 6
+--- Finalizar el paso  2: El array es ahora ['3', '4', '1', '7', '5', '2', '6', '8', '9'] los ultimos elementos ya estan colocados ---
+ Comparando 3 y 4 (Array: ['3', '4', '1', '7', '5', '2', '6', '8', '9'])
+ Comparando 4 y 1 (Array: ['3', '4', '1', '7', '5', '2', '6', '8', '9'])
+ Intercambiando ele anterior 4 y posterior 1
+ Comparando 4 y 7 (Array: ['3', '1', '4', '7', '5', '2', '6', '8', '9'])
+ Comparando 7 y 5 (Array: ['3', '1', '4', '7', '5', '2', '6', '8', '9'])
+ Intercambiando ele anterior 7 y posterior 5
+ Comparando 7 y 2 (Array: ['3', '1', '4', '5', '7', '2', '6', '8', '9'])
+ Intercambiando ele anterior 7 y posterior 2
+ Comparando 7 y 6 (Array: ['3', '1', '4', '5', '2', '7', '6', '8', '9'])
+ Intercambiando ele anterior 7 y posterior 6
+--- Finalizar el paso  3: El array es ahora ['3', '1', '4', '5', '2', '6', '7', '8', '9'] los ultimos elementos ya estan colocados ---
+ Comparando 3 y 1 (Array: ['3', '1', '4', '5', '2', '6', '7', '8', '9'])
+ Intercambiando ele anterior 3 y posterior 1
+ Comparando 3 y 4 (Array: ['1', '3', '4', '5', '2', '6', '7', '8', '9'])
+ Comparando 4 y 5 (Array: ['1', '3', '4', '5', '2', '6', '7', '8', '9'])
+ Comparando 5 y 2 (Array: ['1', '3', '4', '5', '2', '6', '7', '8', '9'])
+ Intercambiando ele anterior 5 y posterior 2
+ Comparando 5 y 6 (Array: ['1', '3', '4', '2', '5', '6', '7', '8', '9'])
+--- Finalizar el paso  4: El array es ahora ['1', '3', '4', '2', '5', '6', '7', '8', '9'] los ultimos elementos ya estan colocados ---
+ Comparando 1 y 3 (Array: ['1', '3', '4', '2', '5', '6', '7', '8', '9'])
+ Comparando 3 y 4 (Array: ['1', '3', '4', '2', '5', '6', '7', '8', '9'])
+ Comparando 4 y 2 (Array: ['1', '3', '4', '2', '5', '6', '7', '8', '9'])
+ Intercambiando ele anterior 4 y posterior 2
+ Comparando 4 y 5 (Array: ['1', '3', '2', '4', '5', '6', '7', '8', '9'])
+--- Finalizar el paso  5: El array es ahora ['1', '3', '2', '4', '5', '6', '7', '8', '9'] los ultimos elementos ya estan colocados ---
+ Comparando 1 y 3 (Array: ['1', '3', '2', '4', '5', '6', '7', '8', '9'])
+ Comparando 3 y 2 (Array: ['1', '3', '2', '4', '5', '6', '7', '8', '9'])
+ Intercambiando ele anterior 3 y posterior 2
+ Comparando 3 y 4 (Array: ['1', '2', '3', '4', '5', '6', '7', '8', '9'])
+--- Finalizar el paso  6: El array es ahora ['1', '2', '3', '4', '5', '6', '7', '8', '9'] los ultimos elementos ya estan colocados ---
+ Comparando 1 y 2 (Array: ['1', '2', '3', '4', '5', '6', '7', '8', '9'])
+ Comparando 2 y 3 (Array: ['1', '2', '3', '4', '5', '6', '7', '8', '9'])
+--- Paso 7: No hay intercambio , el array esta ordenado. ---
+--- clasificacion Bubble Sort finalizado  ---</msg>
+<arg>${initial_array}</arg>
+<arg>${length}</arg>
+<status status="PASS" start="2025-07-22T16:01:01.789730" elapsed="0.000514"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array después del ordenamiento: ${initial_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.791411" elapsed="0.000480"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array esperado: ${expected_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.792094" elapsed="0.000479"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${initial_array}</arg>
+<arg>${expected_array}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.792775" elapsed="0.000292"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>¡La prueba de ordenamiento de burbuja ha pasado exitosamente!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.793322" elapsed="0.000164"/>
+</kw>
+<status status="PASS" start="2025-07-22T16:01:01.786629" elapsed="0.007003"/>
+</test>
+<test id="s1-t2" name="Verificar Ordenamiento con Array Vacio" line="21">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T16:01:01.794433" level="INFO">${empty_array} = []</msg>
+<var>${empty_array}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.794263" elapsed="0.000206"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-07-22T16:01:01.794732" level="INFO">Length is 0.</msg>
+<msg time="2025-07-22T16:01:01.794824" level="INFO">${length} = 0</msg>
+<var>${length}</var>
+<arg>${empty_array}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.794575" elapsed="0.000280"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T16:01:01.795245" level="INFO">--- Comienza la clasificacion  Bubble Sort ---
+--- Va de izquierda a derecha ordenando el elemento con el elemento posterior a la derecha---
+ Array Inicial : []
+--- clasificacion Bubble Sort finalizado  ---</msg>
+<arg>${empty_array}</arg>
+<arg>${length}</arg>
+<status status="PASS" start="2025-07-22T16:01:01.795039" elapsed="0.000261"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${empty_array}</arg>
+<arg>${empty_array}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.795440" elapsed="0.000254"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>La prueba con array vacío ha pasado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.795824" elapsed="0.000290"/>
+</kw>
+<status status="PASS" start="2025-07-22T16:01:01.793882" elapsed="0.002387"/>
+</test>
+<test id="s1-t3" name="Verificar Ordenamiento con Array Ya Ordenado" line="28">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T16:01:01.797192" level="INFO">${sorted_array} = ['1', '2', '3', '4', '5']</msg>
+<var>${sorted_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.796965" elapsed="0.000266"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T16:01:01.797563" level="INFO">${expected_sorted_array} = ['1', '2', '3', '4', '5']</msg>
+<var>${expected_sorted_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.797373" elapsed="0.000222"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-07-22T16:01:01.797855" level="INFO">Length is 5.</msg>
+<msg time="2025-07-22T16:01:01.797948" level="INFO">${length} = 5</msg>
+<var>${length}</var>
+<arg>${sorted_array}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.797713" elapsed="0.000263"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T16:01:01.798281" level="INFO">--- Comienza la clasificacion  Bubble Sort ---
+--- Va de izquierda a derecha ordenando el elemento con el elemento posterior a la derecha---
+ Array Inicial : ['1', '2', '3', '4', '5']
+ Comparando 1 y 2 (Array: ['1', '2', '3', '4', '5'])
+ Comparando 2 y 3 (Array: ['1', '2', '3', '4', '5'])
+ Comparando 3 y 4 (Array: ['1', '2', '3', '4', '5'])
+ Comparando 4 y 5 (Array: ['1', '2', '3', '4', '5'])
+--- Paso 1: No hay intercambio , el array esta ordenado. ---
+--- clasificacion Bubble Sort finalizado  ---</msg>
+<arg>${sorted_array}</arg>
+<arg>${length}</arg>
+<status status="PASS" start="2025-07-22T16:01:01.798090" elapsed="0.000605"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${sorted_array}</arg>
+<arg>${expected_sorted_array}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.798892" elapsed="0.001064"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>La prueba con array ya ordenado ha pasado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T16:01:01.800157" elapsed="0.000204"/>
+</kw>
+<status status="PASS" start="2025-07-22T16:01:01.796507" elapsed="0.003998"/>
+</test>
+<status status="PASS" start="2025-07-22T16:01:01.751068" elapsed="0.049871"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Bubble Sort" id="s1" pass="3" fail="0" skip="0">Test Bubble Sort</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.13 on linux)" generated="2025-07-22T15:17:41.432732" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Bubble Sort" source="/home/death/Documents/pythonIBM/proyectos/Test/PruebasRobot2/test_bubble_sort.robot">
+<test id="s1-t1" name="Verificar Ordenamiento Bubble Sort" line="5">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:17:41.467653" level="INFO">${initial_array} = ['3', '4', '7', '8', '1', '9', '5', '2', '6']</msg>
+<var>${initial_array}</var>
+<arg>3</arg>
+<arg>4</arg>
+<arg>7</arg>
+<arg>8</arg>
+<arg>1</arg>
+<arg>9</arg>
+<arg>5</arg>
+<arg>2</arg>
+<arg>6</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:17:41.467301" elapsed="0.000404"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:17:41.468184" level="INFO">${expected_array} = ['1', '2', '3', '4', '5', '6', '7', '8', '9']</msg>
+<var>${expected_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<arg>6</arg>
+<arg>7</arg>
+<arg>8</arg>
+<arg>9</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:17:41.467969" elapsed="0.000248"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array inicial para la prueba: ${initial_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-22T15:17:41.468408" elapsed="0.000250"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T15:17:41.469591" level="FAIL">Resolving variable '${initial_array.len}' failed: AttributeError: 'list' object has no attribute 'len'</msg>
+<arg>${initial_array}</arg>
+<arg>${initial_array.len}</arg>
+<status status="FAIL" start="2025-07-22T15:17:41.468814" elapsed="0.000852">Resolving variable '${initial_array.len}' failed: AttributeError: 'list' object has no attribute 'len'</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array después del ordenamiento: ${initial_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:17:41.469937" elapsed="0.000043"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Array esperado: ${expected_array}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:17:41.470159" elapsed="0.000031"/>
+</kw>
+<kw name="Lists Should Be Equal">
+<arg>${initial_array}</arg>
+<arg>${expected_array}</arg>
+<status status="NOT RUN" start="2025-07-22T15:17:41.470405" elapsed="0.000032"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>¡La prueba de ordenamiento de burbuja ha pasado exitosamente!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:17:41.470612" elapsed="0.000038"/>
+</kw>
+<status status="FAIL" start="2025-07-22T15:17:41.466411" elapsed="0.004497">Resolving variable '${initial_array.len}' failed: AttributeError: 'list' object has no attribute 'len'</status>
+</test>
+<test id="s1-t2" name="Verificar Ordenamiento con Array Vacio" line="24">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:17:41.471844" level="INFO">${empty_array} = []</msg>
+<var>${empty_array}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:17:41.471603" elapsed="0.000281"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T15:17:41.472624" level="FAIL">Resolving variable '${empty_array.len}' failed: AttributeError: 'list' object has no attribute 'len'</msg>
+<arg>${empty_array}</arg>
+<arg>${empty_array.len}</arg>
+<status status="FAIL" start="2025-07-22T15:17:41.472050" elapsed="0.000625">Resolving variable '${empty_array.len}' failed: AttributeError: 'list' object has no attribute 'len'</status>
+</kw>
+<kw name="Lists Should Be Equal">
+<arg>${empty_array}</arg>
+<arg>${empty_array}</arg>
+<status status="NOT RUN" start="2025-07-22T15:17:41.472896" elapsed="0.000031"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>La prueba con array vacío ha pasado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:17:41.473094" elapsed="0.000027"/>
+</kw>
+<status status="FAIL" start="2025-07-22T15:17:41.471178" elapsed="0.002157">Resolving variable '${empty_array.len}' failed: AttributeError: 'list' object has no attribute 'len'</status>
+</test>
+<test id="s1-t3" name="Verificar Ordenamiento con Array Ya Ordenado" line="30">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:17:41.474217" level="INFO">${sorted_array} = ['1', '2', '3', '4', '5']</msg>
+<var>${sorted_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:17:41.473975" elapsed="0.000277"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-22T15:17:41.474635" level="INFO">${expected_sorted_array} = ['1', '2', '3', '4', '5']</msg>
+<var>${expected_sorted_array}</var>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-22T15:17:41.474419" elapsed="0.000248"/>
+</kw>
+<kw name="Bubble Sort" owner="Algoritmos_de_clasificacion_Bubble_sort_burbujas">
+<msg time="2025-07-22T15:17:41.475396" level="FAIL">Resolving variable '${sorted_array.len}' failed: AttributeError: 'list' object has no attribute 'len'</msg>
+<arg>${sorted_array}</arg>
+<arg>${sorted_array.len}</arg>
+<status status="FAIL" start="2025-07-22T15:17:41.474820" elapsed="0.000644">Resolving variable '${sorted_array.len}' failed: AttributeError: 'list' object has no attribute 'len'</status>
+</kw>
+<kw name="Lists Should Be Equal">
+<arg>${sorted_array}</arg>
+<arg>${expected_sorted_array}</arg>
+<status status="NOT RUN" start="2025-07-22T15:17:41.475718" elapsed="0.000034"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>La prueba con array ya ordenado ha pasado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-07-22T15:17:41.475915" elapsed="0.000026"/>
+</kw>
+<status status="FAIL" start="2025-07-22T15:17:41.473580" elapsed="0.002587">Resolving variable '${sorted_array.len}' failed: AttributeError: 'list' object has no attribute 'len'</status>
+</test>
+<status status="FAIL" start="2025-07-22T15:17:41.433870" elapsed="0.042762"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Bubble Sort" id="s1" pass="0" fail="3" skip="0">Test Bubble Sort</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
