@@ -1,11 +1,20 @@
-#!/usr/bin/python3
 
+from pathlib import Path
+import sys
+
+# Añade la ruta al sys.path
+sys.path.append('/usr/lib/python3.13')
+
+# Ahora intenta importar tkinter
 import tkinter as tk
 from tkinter import filedialog, ttk
 import subprocess
 import os
 import threading
 import re
+
+# Ejemplo de uso de Path
+  # Verifica si la ruta existe
 
 # Directorio predeterminado para el archivo de salida
 directorio_salida_defecto = "/home/death/Vídeos"
