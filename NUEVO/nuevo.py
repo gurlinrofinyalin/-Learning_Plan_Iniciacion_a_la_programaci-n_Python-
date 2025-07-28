@@ -1,2 +1,3 @@
-import tkinter
-print(tkinter.TkVersion)
+import tkinter as tk
+root = tk.Tk()
+root.mainloop()
