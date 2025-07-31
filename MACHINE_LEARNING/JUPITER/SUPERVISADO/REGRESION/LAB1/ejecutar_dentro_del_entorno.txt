@@ -1,0 +1,31 @@
+
+istalar en un entorno 
+pip install jupyter
+
+
+jupyter notebook
+ se abre en
+
+http://localhost:8888/tree
+
+curl https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-ML0101EN-SkillsNetwork/labs/Module%202/data/FuelConsumptionCo2.csv -o FuelConsumptionCo2.csv
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 72629  100 72629    0     0  74866      0 --:--:-- --:--:-- --:--:-- 74798
+
+
+wget -O FuelConsumption.csv https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-ML0101EN-SkillsNetwork/labs/Module%202/data/FuelConsumptionCo2.csv
+--2025-07-29 22:00:31--  https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-ML0101EN-SkillsNetwork/labs/Module%202/data/FuelConsumptionCo2.csv
+Resolving cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)... 169.63.118.104
+Connecting to cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)|169.63.118.104|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 72629 (71K) [text/csv]
+Saving to: ‘FuelConsumption.csv’
+
+FuelConsumption.csv                         100%[===========================================================================================>]  70.93K   240KB/s    in 0.3s
+
+2025-07-29 22:00:37 (240 KB/s) - ‘FuelConsumption.csv’ saved [72629/72629]
+
+ver datos
+
+http://localhost:8888/edit/FuelConsumptionCo2.csv
